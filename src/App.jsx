@@ -7,14 +7,17 @@ import {
   Newsletter,
   Error,
 } from './pages';
+import { loader as landingLoader } from './pages/Landing';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomeLayout />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
+        loader: landingLoader,
         element: <Landing />,
       },
       {
